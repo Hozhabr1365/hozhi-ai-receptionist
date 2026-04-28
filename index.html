@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>منشی هوشمند هژی — Hozhi AI Phone Receptionist</title>
+  <meta name="description" content="سیستم منشی تلفنی هوشمند مبتنی بر هوش مصنوعی برای کسب‌وکارها"/>
+  <meta name="author" content="محمد هژبری"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="src/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>"/>
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <div class="logo-icon">📞</div>
+        <div class="logo-name">منشی هوشمند هژی</div>
+        <div class="logo-en">Hozhi AI Phone Receptionist</div>
+      </div>
+      <nav class="nav">
+        <div class="nav-sec">راه‌اندازی</div>
+        <div class="ni active" data-page="biz" onclick="gp('biz',this)"><div class="nd" style="background:#6c63ff"></div>کسب‌وکار</div>
+        <div class="ni" data-page="docs" onclick="gp('docs',this)"><div class="nd" style="background:#06b6d4"></div>اسناد کسب‌وکار</div>
+        <div class="ni" data-page="faq" onclick="gp('faq',this)"><div class="nd" style="background:#3b82f6"></div>سوالات متداول</div>
+        <div class="ni" data-page="hours" onclick="gp('hours',this)"><div class="nd" style="background:#22c55e"></div>ساعات کاری</div>
+        <div class="ni" data-page="aiset" onclick="gp('aiset',this)"><div class="nd" style="background:#f59e0b"></div>هوش مصنوعی</div>
+        <div class="ni" data-page="phone" onclick="gp('phone',this)"><div class="nd" style="background:#ef4444"></div>خط Twilio</div>
+        <div class="ni" data-page="transfer" onclick="gp('transfer',this)"><div class="nd" style="background:#a78bfa"></div>انتقال تماس</div>
+        <div class="nav-sec">مانیتورینگ</div>
+        <div class="ni" data-page="reports" onclick="gp('reports',this)"><div class="nd" style="background:#06b6d4"></div>گزارش‌ها</div>
+        <div class="ni" data-page="test" onclick="gp('test',this)"><div class="nd" style="background:#10b981"></div>آزمایش منشی</div>
+      </nav>
+      <div class="sidebar-footer">
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px">
+          <div class="pulse"></div>
+          <span style="color:var(--green)">سیستم آنلاین</span>
+        </div>
+        <div id="tok-display">توکن: ۰</div>
+        <div class="copyright">
+          © تمام حقوق مادی و معنوی این نرم‌افزار<br>
+          متعلق به <strong>محمد هژبری</strong> است<br>
+          <span style="direction:ltr;display:block;margin-top:2px">Hozhi AI — v1.0.0</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <div class="pg-title" id="pg-title">اطلاعات کسب‌وکار</div>
+          <div class="pg-desc" id="pg-desc">مشخصات کسب‌وکار خود را وارد کنید</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="save-ind" id="saved-ind" style="opacity:0">✓ ذخیره شد</div>
+          <div class="badge bp">localStorage v1.0</div>
+        </div>
+      </div>
+      <div class="content" id="content">
+        <!-- Pages injected by JS -->
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast-el"></div>
+
+  <script src="src/data.js"></script>
+  <script src="src/storage.js"></script>
+  <script src="src/ai.js"></script>
+  <script src="src/pages.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
